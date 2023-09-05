@@ -1,0 +1,101 @@
+/* Basisstijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Weerdata-sectie */
+.weather-data {
+    text-align: center;
+}
+
+.weather-data h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Achtergrondafbeeldingen */
+#background {
+    position: fixed;
+    top: 70px; /* Plaats de achtergrond 70px onder de header */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none; /* Voorkom dat de achtergrondafbeelding interageert met inhoud */
+}
+
+#background.clouds {
+    background-image: url('https://cdn.pixabay.com/animation/2022/09/17/16/21/16-21-02-652__340.png');
+    background-size: 20%; /* Pas de grootte van de wolken aan zoals vereist */
+    background-repeat: repeat-x; /* Herhaal de wolken horizontaal aan de bovenkant van de website */
+    background-position: center top; /* Plaats de wolken in het midden bovenaan de website */
+    animation: cloudsAnimation 80s linear infinite; /* Voeg een animatie-effect toe aan de wolken */
+}
+
+#background.rain {
+    background-image: url('https://png.pngtree.com/png-vector/20221019/ourmid/pngtree-rain-drop-illustration-png-image_6353249.png'); /* Voeg het pad naar je regendruppel-afbeelding toe */
+    background-size: 250px; /* Pas de grootte van de regen aan zoals vereist */
+    background-repeat: repeat; /* Herhaal de regenafbeelding verticaal op de website */
+    background-position: center -10px; /* Plaats de regen iets verder uit elkaar verticaal bovenaan de website */
+    animation: rainAnimation 1.5s linear infinite; /* Voeg een animatie-effect toe aan de regen */
+}
+
+#background.sun {
+    background-image: url('https://clipart-library.com/images/8czKnAq5i.png');
+    background-size: 180px; /* Pas de grootte van de zon aan zoals vereist */
+    background-repeat: no-repeat;
+    background-position: 17px 30px; /* Plaats de zon linksboven onder de header met wat ruimte */
+}
+
+@keyframes rainAnimation {
+    0% { background-position: center -200px; }
+    100% { background-position: center 200px; }
+}
+
+@keyframes cloudsAnimation {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}

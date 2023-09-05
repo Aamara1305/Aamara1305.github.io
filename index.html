@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weerstation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Weerstation</h1>
+    </header>
+    <main>
+        <section class="weather-data">
+            <h2>Actuele Weerdata</h2>
+            <div class="data-item">
+                <p class="label">Temperatuur:</p>
+                <p class="value" id="temperature">-- °C</p>
+            </div>
+            <div class="data-item">
+                <p class="label">Luchtvochtigheid:</p>
+                <p class="value" id="humidity">-- %</p>
+            </div>
+            <div class="data-item">
+                <p class="label">Luchtdruk:</p>
+                <p class="value" id="pressure">-- hPa</p>
+            </div>
+            <div class="data-item">
+                <p class="label">Neerslag:</p>
+                <p class="value" id="precipitation">-- mm</p>
+            </div>
+            <div class="data-item">
+                <p class="label">Tijd:</p>
+                <p class="value" id="timestamp">--</p>
+            </div>
+        </section>
+    </main>
+    <div id="background" class="sun"></div>
+    <footer>
+        <p>&copy; Marouane Aamara 2023, Weerstation Project</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+<script>
+  // Simuleer het ophalen van de temperatuur (vervang dit met echte gegevens)
+var temperatuur = 5; // Hier kun je de temperatuurwaarde instellen
+
+// Verander de achtergrondafbeelding op basis van de temperatuur
+var backgroundElement = document.getElementById('background');
+
+if (temperatuur > 20) {
+    backgroundElement.className = 'sun';
+} else if (temperatuur <= 20 && temperatuur >= 10) {
+    backgroundElement.className = 'clouds'; // Gebruik de 'clouds' klasse voor wolken
+} else {
+    backgroundElement.className = 'rain'; // Gebruik de 'rain' klasse voor regen
+}
+
+// Update de temperatuurweergave op de pagina
+var temperatureElement = document.getElementById('temperature');
+temperatureElement.textContent = temperatuur + " °C";
+
+</script>
+</html>
